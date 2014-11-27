@@ -1,4 +1,5 @@
 require 'faker'
+require 'uri'
 
 class Url < ActiveRecord::Base
 
@@ -6,5 +7,6 @@ class Url < ActiveRecord::Base
 
   def createShortURL
     self.short_url = "http://localhost:9393/" << Faker::Base.regexify("[A-Za-z0-9]{5}")
+    self.click_count = 0
   end
 end
